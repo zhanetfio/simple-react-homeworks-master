@@ -1,26 +1,28 @@
-import React from 'react'
+import React, {ChangeEvent} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+    name: string // fixed
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) =>void// fixed
+    addUser: ()=>void // fixed
+    error: string // fixed
+    totalUsers: number // fixed
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
 ) => {
-    const inputClass = s.error // need to fix with (?:)
+    const inputClass = s.error ? s.errorInput : s.input  // fixed with (?:)
 
     return (
-        <div>
+        <div className={s.greeting}>
+            <div >
             <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
+            <span className={s.error}>{error}</span>
+            </div>
+            <button onClick={addUser} className={s.button}>add</button>
+            <span className={s.count}>{totalUsers}</span>
         </div>
     )
 }
