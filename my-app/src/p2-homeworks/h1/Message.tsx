@@ -1,20 +1,24 @@
 import React from 'react'
-import * as url from "url";
+import s from './Message.module.css'
 
 type MessageType = {
     message: string,
-    avatar: any,
+    avatar: string,
     name: string,
     time: string
 }
 
 function Message(props: MessageType) {
     return (
-        <div>
-            <div>{props.avatar}</div>
-            <div>{props.name} </div>
-            <div>{props.message}</div>
-            <div>{props.time}</div>
+        <div className={s.wrapper}>
+            <img alt={'avatar'} src={props.avatar} className={s.avatar}></img>
+            <div className={s.message_wrapper}>
+                <div className={s.name}>{props.name} </div>
+                <div className={s.message_time}>
+                    <div className={s.message}>{props.message}</div>
+                    <div className={s.time}>{props.time}</div>
+                </div>
+            </div>
         </div>
     )
 }

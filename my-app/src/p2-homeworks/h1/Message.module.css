@@ -1,4 +1,54 @@
+.wrapper {
+    display: flex;
+    background: greenyellow;
+}
+
+.avatar {
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+}
+
+.message_wrapper {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px 10px 10px 0;
+    background: #4d5156;
+    color: #bbfbbc;
+}
+
+.message_wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(60px at top left, transparent 49%, #4d5156 51%) no-repeat right bottom;
+}
+
+.name {
+    font-size: 20px;
+    color: goldenrod;
+}
+
 .message {
+    font-size: 20px;
+    color: lightyellow;
+}
 
+.message_time {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
 
+.time {
+    display: flex;
+    justify-content: space-between;
+    color: #bbfbbc
 }
