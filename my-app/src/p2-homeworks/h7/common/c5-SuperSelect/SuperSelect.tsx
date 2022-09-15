@@ -4,7 +4,7 @@ import s from './SuperSelect.module.css'
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?:[]
+    options?:any[]
     onChangeOption?: (option: any) => void
 }
 
