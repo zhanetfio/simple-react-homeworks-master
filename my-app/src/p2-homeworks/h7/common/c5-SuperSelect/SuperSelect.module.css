@@ -1,0 +1,13 @@
+.select {
+    margin: 10px;
+    padding: 3px;
+    background-color: yellow;
+    border: 3px solid yellow;
+    border-radius: 5px;
+    color: darkgreen;
+    cursor: pointer;
+}
+.select:hover {
+    border: 3px solid gold;
+
+}
