@@ -1,15 +1,19 @@
 import React, {useState} from 'react'
+import s from '../h11/HW11.module.css'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    const [value, setValue] = useState<[number,number]>([0,100])
 
+
+    const onChangeRangeHandler=(newValue:number)=>{
+        setValue([newValue,value[1]])
+    }
 
     const onChangeDoubleRangeHandler=(newValue:[number,number])=>{
-        setValue1(newValue[0])
-        setValue2(newValue[1])
+        setValue(newValue as [number,number])
+
     }
     return (
         <div>
@@ -18,19 +22,21 @@ function HW11() {
 
             {/*should work (должно работать)*/}
             <div>
-                <span style={{padding: "20px"}}>{value1}</span>
-                <SuperRange  onChangeRange={setValue1} value={value1} min={0} max={100} step={1}
+                <div className={s.value} >{value[0]}</div>
+                <SuperRange
+                    onChangeRange={onChangeRangeHandler}
+                    value={value[0]}
                     // сделать так чтоб value1 изменялось(Done)
                 />
             </div>
 
-            <div>
-                <span>{value1}</span>
+            <div style={{display: 'inline'}}>
+                <div className={s.value} >{value[0]}</div>
                 <SuperDoubleRange
-                    value={[value1,value2]} onChangeRange={onChangeDoubleRangeHandler}
+                    value={value} onChangeRange={onChangeDoubleRangeHandler}
                     // сделать так чтоб value1 и value2 изменялось
                 />
-                <span>{value2}</span>
+                <div className={s.value}>{value[1]}</div>
             </div>
 
             <hr/>

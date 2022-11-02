@@ -10,28 +10,28 @@ type SuperDoubleRangePropsType = {
 
 const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     {
-        onChangeRange, value,
+        onChangeRange, value, width,
         // min, max, step, disable, ...
     }
 ) => {
-    const handleChange=(e:Event,newValue:number | number[])=>{
-        onChangeRange && onChangeRange(newValue as [number,number])
+    const handleChange = (e: Event, newValue: number | number[]) => {
+        onChangeRange && onChangeRange(newValue as [number, number])
     }
 
     // сделать самому, можно подключать библиотеки
 
     return (
-        <Box sx={{width:300, }}>
-            DoubleRange
-            <Slider
-                getAriaLabel={() => 'Range'}
-                value={value}
-                onChange={handleChange}
-                valueLabelDisplay="auto"
-
-
-            />
-        </Box>
+        <div style={{display:'inline-block'}}>
+            <Box width={width ? width : 300}>
+                DoubleRange
+                <Slider
+                    getAriaLabel={() => 'Range'}
+                    value={value}
+                    onChange={handleChange}
+                    valueLabelDisplay="auto"
+                />
+            </Box>
+        </div>
     )
 }
 
