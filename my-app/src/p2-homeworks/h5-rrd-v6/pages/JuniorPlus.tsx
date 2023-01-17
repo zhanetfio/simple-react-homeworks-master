@@ -3,7 +3,7 @@ import React from 'react';
 const JuniorPlus = () => {
     return (
         <div>
-            {/*<HW11/>*/}
+            JuniorPlus
         </div>
     );
 };
