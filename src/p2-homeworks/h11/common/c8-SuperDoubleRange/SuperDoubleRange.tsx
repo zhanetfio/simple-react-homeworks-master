@@ -1,5 +1,6 @@
 import React from 'react'
-import {Box, Slider} from "@mui/material";
+import {Box, Slider} from "@material-ui/core";
+
 
 type SuperDoubleRangePropsType = {
     onChangeRange?: (value: [number, number]) => void
