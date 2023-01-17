@@ -1,0 +1,35 @@
+.wrapper {
+}
+
+.greeting {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.errorInput {
+    margin: 10px;
+    border: 2px solid red;
+}
+
+.input {
+    background-color: yellowgreen;
+    color: black;
+}
+
+.error {
+    margin: 0 5px 0 5px;
+    color: firebrick;
+}
+
+.button {
+    margin: 10px;
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.count {
+    font-size: 18px;
+    margin: 10px;
+}

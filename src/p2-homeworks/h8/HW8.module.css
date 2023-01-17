@@ -1,0 +1,12 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-left: 10px;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 10px;
+}

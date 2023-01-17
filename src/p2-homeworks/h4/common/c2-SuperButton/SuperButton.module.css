@@ -1,0 +1,10 @@
+.default {
+    background-color: greenyellow;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.red {
+    background: red;
+    border-radius: 3px;
+}
