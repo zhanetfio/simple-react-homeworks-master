@@ -2,13 +2,12 @@
 type ThemeStateType={
     theme:string
 }
-
 const initState = {
-    theme: 'green'
+    theme: 'white'
 };
-
 type ActionType= ReturnType<typeof  changeThemeAC>
-export const themeReducer = (state:ThemeStateType = initState, action: ActionType): ThemeStateType => { // fix any
+
+export const themeReducer = (state:ThemeStateType = initState, action: ActionType): ThemeStateType => {
     switch (action.type) {
         case "CHANGE-THEME": {
             return {
@@ -26,4 +25,4 @@ export const changeThemeAC = (newTheme:string)  => {
         type:"CHANGE-THEME",
         newTheme
     }as const
-}; // fix any
+};

@@ -1,9 +1,16 @@
 .wrapper {
+
+}
+
+.affairsBlock {
+    box-sizing: border-box;
+    border: 2px solid;
+    width: 400px;
 }
 
 .list {
     margin: 20px;
-    width: 400px;
+
     display: flex;
     justify-content: space-between;
     background-color: yellow;

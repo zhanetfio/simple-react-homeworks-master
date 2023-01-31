@@ -5,12 +5,12 @@ import {AppStoreType} from "../h10/bll/store";
 import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 import {changeThemeAC} from "./bll/themeReducer";
 
-const themes:string[] = ['dark', 'red', 'green'];
+const themes: string[] = ['white', 'blue', 'yellow', 'dark', 'red', 'some'];
+
 
 function HW12() {
-    const theme = useSelector<AppStoreType,string>(store => store.themes.theme) // useSelector
+    const theme = useSelector<AppStoreType,string>(store => store.themes.theme)
     const dispatch = useDispatch()
-    // useDispatch, onChangeCallback
     const onChangeCallback = (newTheme:string) => {
         dispatch(changeThemeAC(newTheme))
     }
@@ -22,7 +22,7 @@ function HW12() {
             </span>
 
             {/*should work (должно работать)*/}
-            <SuperSelect options={themes} value={theme} onChangeOption={onChangeCallback}/>
+            <SuperSelect className={s.item} options={themes} value={theme} onChangeOption={onChangeCallback}/>
 
             <hr/>
         </div>

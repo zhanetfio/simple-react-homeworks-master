@@ -1,39 +1,47 @@
-import React, {Dispatch, SetStateAction} from 'react'
+import React from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
     data: AffairType[]
-    setFilter: (filter:FilterType)=>void
-    deleteAffairCallback: (_id:number)=>void
-    filter:FilterType
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
+    filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
     const mappedAffairs = props.data.map((a: AffairType) => (
-        <Affair // should work
-            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+        <Affair
+            key={a._id}
             affair={a}
             deleteAffairCallback={props.deleteAffairCallback}
         />
     ))
 
-    const setAll = () => {props.setFilter('all')} // fixed
-    const setHigh = () => {props.setFilter('high')}
-    const setMiddle = () => {props.setFilter('middle')}
-    const setLow = () => {props.setFilter('low')}
+    const setAll = () => {
+        props.setFilter('all')
+    } // fixed
+    const setHigh = () => {
+        props.setFilter('high')
+    }
+    const setMiddle = () => {
+        props.setFilter('middle')
+    }
+    const setLow = () => {
+        props.setFilter('low')
+    }
 
-    const allBtn= s.button + " "+(props.filter ==='all' ? s.active :'')
-    const highBtn= s.button + " "+(props.filter ==='high' ? s.active :'')
-    const middleBtn= s.button + " "+(props.filter ==='middle' ? s.active :'')
-    const lowBtn= s.button + " "+(props.filter ==='low' ? s.active :'')
+    const allBtn = s.button + " " + (props.filter === 'all' ? s.active : '')
+    const highBtn = s.button + " " + (props.filter === 'high' ? s.active : '')
+    const middleBtn = s.button + " " + (props.filter === 'middle' ? s.active : '')
+    const lowBtn = s.button + " " + (props.filter === 'low' ? s.active : '')
 
     return (
         <div>
-
-            {mappedAffairs}
-
+            <div className={s.affairsBlock}>
+                {mappedAffairs}
+            </div>
             <button onClick={setAll} className={allBtn}>All</button>
             <button onClick={setHigh} className={highBtn}>High</button>
             <button onClick={setMiddle} className={middleBtn}>Middle</button>

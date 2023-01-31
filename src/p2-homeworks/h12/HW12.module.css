@@ -14,10 +14,35 @@
     color: aqua;
 }
 
-.green {
-    background-color: lightgreen;
+.some {
+    background: lightgreen;
 }
 
-.green-text {
+.some-text {
     color: darkslateblue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.white {
+    background: white;
+}
+
+.blue {
+    background: blue;
+}
+
+.blue-text {
+    color: aliceblue;
+}
+
+.item {
+    margin: 20px;
+    padding: 5px;
+    display: inline-block;
+    background-color: cadetblue;
+    border: 1px black solid;
+    border-radius: 10px;
 }

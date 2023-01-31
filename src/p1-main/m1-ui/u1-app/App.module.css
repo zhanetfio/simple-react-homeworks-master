@@ -1,3 +1,26 @@
 .App {
 
 }
+.App.dark {
+    background: dimgrey;
+}
+
+.App.dark-text {
+    color: aliceblue;
+}
+
+.App.red {
+    background: lightcoral;
+}
+
+.App.red-text {
+    color: aqua;
+}
+
+.App.green {
+    background-color: lightgreen;
+}
+
+.App.green-text {
+    color: darkslateblue;
+}
