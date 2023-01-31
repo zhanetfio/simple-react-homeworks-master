@@ -3,14 +3,14 @@
 }
 
 .affairsBlock {
+    margin: 10px;
     box-sizing: border-box;
     border: 2px solid;
-    width: 400px;
+    width: 440px;
 }
 
 .list {
     margin: 20px;
-
     display: flex;
     justify-content: space-between;
     background-color: yellow;
